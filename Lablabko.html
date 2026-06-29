@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Monthsary Lablab ko ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #ffb6c1, #ffc0cb, #ffe4e1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px;
+            max-width: 700px;
+        }
+
+        h1 {
+            color: #d63384;
+            font-size: 40px;
+        }
+
+        p {
+            color: #6d214f;
+            font-size: 18px;
+        }
+
+        .heart-btn {
+            font-size: 60px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            animation: pulse 1.2s infinite;
+            margin-top: 20px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .letter {
+            display: none;
+            margin-top: 25px;
+            background: rgba(255,255,255,0.9);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        .floating-heart {
+            position: absolute;
+            color: rgba(255, 0, 100, 0.5);
+            animation: float 6s linear infinite;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-10vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Happy Monthsary, My Love ❤️</h1>
+        <p>Click the heart below for my message to you 💌</p>
+
+        <button class="heart-btn" onclick="showLetter()">❤️</button>
+
+        <div class="letter" id="loveLetter">
+            <h2>My Love Letter 💖</h2>
+            <p>
+             Happy 34th Monthsary, Lablab ko. ❤️ <br><br>
+             Hi my Beatiful, Sweetest, Sexiest, Preetiest, and Most Special Girl I have, Thankyou for Everything that we spend together with us.
+                <br><br>
+                I am grateful for every laugh, every memory, and every moment we have together.
+                No matter what happens, I will always choose you, even we have a lot of fight everyday.
+                <br><br>
+                I love you more than words can express, though I'm not enough to make you Happy Allday.
+                Happy Monthsary, Lablab ko💕
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function showLetter() {
+            document.getElementById("loveLetter").style.display = "block";
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("floating-heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = Math.random() * 20 + 20 + "px";
+            heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        setInterval(createHeart, 500);
+    </script>
+
+</body>
+</html>
